@@ -15,5 +15,5 @@ router.patch(
   validateRequest(ContactValidation.updateContactValidation),
   ContactController.updateContactFromDB
 );
-router.delete('/:id', ContactController.updateContactFromDB);
+router.delete('/:id', ContactController.deleteContactFromDB);
 export const ContactRouter = router;

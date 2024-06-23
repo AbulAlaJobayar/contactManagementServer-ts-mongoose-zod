@@ -39,6 +39,7 @@ const updateContactValidation = z.object({
     })
     .optional(),
   photoUrl: z.string().optional(),
+  favorite: z.string().optional(),
 });
 
 export const ContactValidation = {

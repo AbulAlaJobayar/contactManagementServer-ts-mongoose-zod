@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
-import { TContact } from './contact.interface';
+import { TContact, favorites } from './contact.interface';
+import { string } from 'zod';
 
 const contactSchema = new Schema<TContact>(
   {
@@ -22,6 +23,13 @@ const contactSchema = new Schema<TContact>(
       type: String,
       required: [true, 'please input your image '],
     },
+    favorite:{
+        type:String,
+        required:true,
+        enum: Object.values(favorites),
+        default:favorites.NO
+
+    }
   },
   { timestamps: true }
 );
