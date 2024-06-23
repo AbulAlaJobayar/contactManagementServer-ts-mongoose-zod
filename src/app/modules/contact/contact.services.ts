@@ -10,7 +10,7 @@ const getAllContactFromDB = async (): Promise<TContact[]> => {
   const result = await Contact.find();
   return result;
 };
-const updateContactIntoDB = async (
+const updateContactFromDB = async (
   id: string,
   payload: Partial<TContact>
 ): Promise<TContact | null> => {
@@ -29,6 +29,6 @@ const deleteContactFromDB = async (id: string): Promise<TContact | null> => {
 export const ContactServices = {
   createContactIntoDB,
   getAllContactFromDB,
-  updateContactIntoDB,
+  updateContactFromDB,
   deleteContactFromDB,
 };
