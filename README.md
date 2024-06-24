@@ -49,7 +49,8 @@ NODE_ENV=production
 PORT=5000
 DB_URL=mongodb+srv://contactsManagement:y57yJ0QKLxQd9wFf@cluster0.ph1akes.mongodb.net/user?retryWrites=true&w=majority
 ```
-
+### 6. Run localhost:
+`yarn start:dev`
 
 #### Domain: http://localhost:5000
 
