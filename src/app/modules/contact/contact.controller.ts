@@ -22,8 +22,19 @@ const getAllContactFromDB = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const getSingleContactFromDB = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await ContactServices.getSingleContactFromDB(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Contact Retrieved Successfully!',
+    data: result,
+  });
+});
 const updateContactFromDB = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
+  console.log(req.body)
   const result = await ContactServices.updateContactFromDB(id, req.body);
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -46,6 +57,7 @@ const deleteContactFromDB = catchAsync(async (req: Request, res: Response) => {
 export const ContactController = {
   createContactIntoDB,
   getAllContactFromDB,
+  getSingleContactFromDB,
   updateContactFromDB,
   deleteContactFromDB,
 };

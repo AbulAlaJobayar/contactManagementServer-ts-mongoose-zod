@@ -10,6 +10,7 @@ router.post(
   ContactController.createContactIntoDB
 );
 router.get('/get-contact', ContactController.getAllContactFromDB);
+router.get('/:id', ContactController.getSingleContactFromDB);
 router.patch(
   '/:id',
   validateRequest(ContactValidation.updateContactValidation),
